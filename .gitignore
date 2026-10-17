@@ -32,3 +32,6 @@ private/
 *.log
 
 *.egg-info/
+
+# Explicitly approved public handoff bundle only.
+!handoff/jingcheng-windows-setup.zip

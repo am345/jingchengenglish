@@ -1,6 +1,6 @@
 # 服务器与私有素材
 
-公开仓库只有角色别名，真实主机/端口/用户名和密钥位置写在 `config/local.toml` 或本机 SSH 配置。
+公共模板使用角色别名。项目所有者已同意公开 `handoff/jingcheng-windows-setup.zip`，包内包含当前真实服务器参数、音色参考和检测/降噪模型。解压后仍通过本机 `config/local.toml` 和 SSH 配置调用；不含私钥或登录凭证。
 
 ## SSH
 

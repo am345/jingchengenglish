@@ -1,6 +1,6 @@
 # 景程口语 · 可迁移的教学视频工作流
 
-把制作脚本、课件、提示词规范和验收流程放在 GitHub；人物参考、建国音色、模型权重、原始笔记和成片留在私有素材目录或服务器。
+本仓库提供制作脚本、课件、提示词规范和验收流程，并包含项目所有者同意公开的 [Windows 交接包](handoff/jingcheng-windows-setup.zip)：实际服务器配置、建国音色参考，以及检测/降噪模型。人物参考、原始笔记、具体课程素材和成片另行准备。
 
 **Windows 可以作为控制端。** 配音由已有的 Linux / L40S 服务器完成；本机提交 Grok 任务、抠像、渲染 Remotion 和检测成片。仓库不包含任何账号登录状态或 SSH 私钥。
 
@@ -64,7 +64,19 @@ jc --config config/local.toml doctor
 
 `doctor` 只检查本地依赖，不代表登录、服务器连通或成片质量已经验证。
 
-## 3. 连接已有服务器、导入私有素材
+## 3. 恢复交接包、连接服务器
+
+[Windows 交接包](handoff/jingcheng-windows-setup.zip) 已随仓库提交，`git clone` / `git pull` 后即可取得，约 59 MB；[SHA-256 校验文件](handoff/jingcheng-windows-setup.zip.sha256) 与包放在一起。
+
+在仓库根目录，用刚安装的 Python 解压：
+
+```bash
+python -m zipfile -e handoff/jingcheng-windows-setup.zip .cache/windows-setup
+```
+
+阅读 `.cache/windows-setup/README.md`，将其中的 `config/local.toml` 和 `assets/` 复制到仓库对应目录。首次配置可替换 `jc init-config` 的空模板；已有配置请合并本机路径和代理设置。包内的 `ssh_config` 只合并 Host 条目，不覆盖自己的整个 SSH 配置。
+
+包内包含 R6/R2 WAV、音色 preset、SyncNet 与 DeepFilterNet3。CosyVoice 基模型和微调权重仍在 L40S。SSH 私钥、密码及 Grok 登录状态不在包里，需要在新电脑单独配置；人物参考、笔记 PDF 和具体课程时间线也需另行准备。
 
 参照 [服务器与私有素材](docs/servers.md) 配置 SSH。两个角色分别是：
 
@@ -76,7 +88,7 @@ jc server-check voice
 jc server-check storage
 ```
 
-需要你自己的 **R6 表演参考 + R2 声学参考 + refined LLM/flow 权重**，普通 CosyVoice 权重不能替代已确认的建国音色。仓库内有旧音色基准的导入工具，会剔除旧电脑路径：
+本流程使用 **R6 表演参考 + R2 声学参考 + refined LLM/flow 权重**，普通 CosyVoice 权重不能替代已确认的建国音色。交接包已提供两段参考和精简基准；若改从另一份旧基准迁移，可用下面工具剔除旧电脑路径：
 
 ```bash
 python tools/import_voice_preset.py /path/to/existing/preset.json
