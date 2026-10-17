@@ -1,0 +1,11 @@
+{
+  "id":"courseware-demo", "demo":true, "title":"景程口语", "subtitle":"课堂版式预览 · 无人物素材",
+  "fps":24, "width":1280, "height":720, "duration_frames":72,
+  "teacher":{"left":0,"top":0,"scale":1},
+  "clips":[{"id":"G01","start_frame":0,"end_frame":72,"board":{
+    "heading":"What is he like?", "rows":[
+      {"word":"kind","meaning":"友善的","active_ranges":[[0,36]]},
+      {"word":"strict","meaning":"严格的","active_ranges":[[36,72]]}
+    ], "note":"like 在这个问句中表示‘怎么样’。"
+  }}]
+}

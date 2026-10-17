@@ -1,0 +1,16 @@
+# Copy to your own ~/.ssh/config (Windows: %USERPROFILE%\.ssh\config).
+# Replace hostname, user, port and key location locally.
+Host jingcheng-voice
+    HostName voice-server.example.com
+    User your-user
+    Port 22
+    IdentityFile ~/.ssh/jingcheng_voice
+    IdentitiesOnly yes
+    ServerAliveInterval 15
+
+Host jingcheng-storage
+    HostName storage-server.example.com
+    User your-user
+    Port 22
+    IdentityFile ~/.ssh/jingcheng_storage
+    IdentitiesOnly yes

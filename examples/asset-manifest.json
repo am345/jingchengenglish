@@ -1,0 +1,5 @@
+{
+  "server":"storage",
+  "files":[{"path":"voice/preset.json","remote_relative_path":"private-assets/voice/preset.json",
+    "bytes":0,"sha256":"REPLACE_WITH_FULL_SHA256_FROM_PRIVATE_MANIFEST"}]
+}

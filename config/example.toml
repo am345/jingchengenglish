@@ -1,0 +1,88 @@
+# All local relative paths resolve against this file's parent directory.
+# ${NAME} expands an environment variable; an unset variable is an error.
+# Windows TOML paths: use forward slashes or single-quoted literal strings.
+schema_version = 1
+project_root = ".."
+
+[paths]
+assets = "../assets"
+runs = "../runs"
+cache = "../.cache"
+
+[tools]
+ffmpeg = "ffmpeg"
+ffprobe = "ffprobe"
+node = "node"
+ssh = "ssh"
+scp = "scp"
+grok = "grok"
+
+[grok]
+controller_model = "grok-4.7"
+reasoning_effort = "high"
+concurrency = 2
+max_jobs_per_batch = 6
+max_requested_seconds_per_batch = 90
+timeout_seconds = 900
+schema_confirmed = false
+privacy_ready = false
+# Proxy affects only the spawned Grok process. Empty values preserve its environment.
+http_proxy = ""
+https_proxy = ""
+all_proxy = ""
+
+[servers.voice]
+host = "jingcheng-voice"
+port = 22
+identity_file = ""
+python = "python3"
+job_root = "/srv/jingcheng/jobs"
+connect_timeout = 12
+
+[servers.voice.runtime]
+cosyvoice_repo = "/srv/jingcheng/CosyVoice"
+model_dir = "/srv/jingcheng/models/CosyVoice3"
+llm_checkpoint = "/srv/jingcheng/models/jianguo/llm.pt"
+flow_checkpoint = "/srv/jingcheng/models/jianguo/flow.pt"
+threads = 4
+timeout_seconds = 1200
+
+[servers.storage]
+host = "jingcheng-storage"
+port = 22
+identity_file = ""
+python = "python3"
+root = "/srv/jingcheng"
+connect_timeout = 12
+
+[voice]
+preset = "../assets/voice/preset.json"
+references = "../assets/voice/references.json"
+concurrency = 2
+max_cases_per_worker = 12
+
+[matte]
+backend = "rvm"
+model = "../assets/models/rvm_mobilenetv3_fp32.onnx"
+model_sha256 = "88d4531297118f595bf2fd60f6f566aec2e559393802d1f436c380f0cbbd2828"
+provider = "CPUExecutionProvider"
+downsample_ratio = 0.375
+vision_binary = "../.cache/bin/cutout"
+
+[qa]
+face_backend = "yunet"
+face_model = "../assets/models/face_detection_yunet_2023mar.onnx"
+face_model_sha256 = "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"
+vision_binary = "../.cache/bin/measure_faces"
+syncnet_weights = "../assets/models/syncnet_v2.model"
+syncnet_sha256 = "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442"
+calibration_record = ""
+
+[audio]
+deepfilter_model = "../assets/models/DeepFilterNet3"
+attenuation_limit_db = 18
+
+[render]
+concurrency = 2
+crf = 14
+font = ""

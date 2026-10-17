@@ -1,0 +1,24 @@
+{
+  "batch_id": "lesson04-video-v1",
+  "jobs": [
+    {
+      "id": "G01-c01",
+      "arguments": {
+        "duration": 10,
+        "aspect_ratio": "16:9",
+        "resolution_name": "720p",
+        "first_frame": "teacher/first-frame.png",
+        "last_frame": "teacher/last-frame.png",
+        "images": [
+          "teacher/reference.png"
+        ],
+        "prompt": "ONE continuous 10-second classroom shot, locked camera, native 24 fps. Match the reference teacher identity, lighting, skin tone, right-side position and scale exactly. Mild natural smile. Keep the full face and hands visible. From 0.0 to 0.7 s, settle and look at the camera. From 0.7 to 2.4 s, say 同学们，我们来看这组单词。 From 2.4 to 4.8 s, turn to the board, point to the first word and say kind，友善的。 From 4.8 to 7.4 s, remain facing the board, move the pointing hand naturally to the second word and say strict，严格的。 From 7.4 to 9.2 s, finish the complete word group, lower the hand and turn back ONCE. Rest naturally until 10.0 s. Keep lips moving for every audible syllable, including final consonants. Speak at natural speed; no rushed ending. Only the index finger points, fingertip touches the explicitly marked word anchors in the reference. Never touch the head or cover the mouth. No camera motion, cuts, zoom, loop, pose resets or new text. Remotion adds exact board text later. This is an EXAMPLE schedule: replace it with measured boundaries from the approved audio before submitting."
+      }
+    }
+  ],
+  "approved_audio": {
+    "reference": "asset:audio/lesson04-master.wav",
+    "approved": false,
+    "sha256": "REPLACE_AFTER_LISTENING"
+  }
+}

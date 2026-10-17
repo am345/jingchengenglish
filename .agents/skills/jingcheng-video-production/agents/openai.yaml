@@ -1,0 +1,6 @@
+interface:
+  display_name: "景程教学视频制作"
+  short_description: "完整讲解段生成、建国配音、课件与口型验收"
+  default_prompt: "使用 $jingcheng-video-production 按仓库配置制作教学视频，保留完整连续动作和已确认配音，并复核最终成片。"
+policy:
+  allow_implicit_invocation: true

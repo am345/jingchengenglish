@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jingchengenglish"
+version = "0.1.0"
+description = "Configurable teaching-video production tools"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+media = ["numpy==1.26.4", "Pillow==11.3.0", "scipy==1.13.1", "soundfile==0.13.1"]
+portable = ["onnxruntime==1.23.2", "opencv-python-headless==4.11.0.86"]
+qa = ["torch==2.6.0", "python_speech_features==0.6"]
+denoise = ["DeepFilterNet==0.5.6", "torch==2.6.0", "torchaudio==2.6.0"]
+
+[project.scripts]
+jc = "jingcheng.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["jingcheng*"]

@@ -1,0 +1,8 @@
+{
+  "job_id":"lesson04-audio-v1", "seed":2026,
+  "cases":[{
+    "id":"G01", "mode":"zero_shot", "reference":"R6", "acoustic_reference":"R2",
+    "prefix":"You are a helpful assistant.<|endofprompt|>",
+    "text":"同学们，我们来看这组单词。kind，友善的。strict，严格的。"
+  }]
+}

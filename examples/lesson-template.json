@@ -1,0 +1,14 @@
+{
+  "id":"lesson04-film-v1", "title":"景程口语", "subtitle":"第一单元 · 性格与外貌",
+  "fps":24,"width":1280,"height":720,"duration_frames":2160,
+  "teacher":{"left":0,"top":0,"scale":1},
+  "audio":"asset:audio/lesson04-master.wav", "audio_sha256":"REPLACE_WITH_APPROVED_MASTER_SHA256",
+  "audio_review":{"approved":false,"sha256":"REPLACE_AFTER_LISTENING"},
+  "clips":[{"id":"G01","start_frame":0,"end_frame":240,
+    "teacher_frames":"run:lesson04-video-v1/matte/G01-c01", "source_start_frame":0,
+    "board":{"heading":"What is he like?","rows":[
+      {"word":"kind","meaning":"友善的","active_ranges":[[58,115]]},
+      {"word":"strict","meaning":"严格的","active_ranges":[[115,178]]}
+    ],"note":"用形容词描述性格。"}
+  }]
+}

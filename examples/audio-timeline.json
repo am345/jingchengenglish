@@ -1,0 +1,4 @@
+{
+  "sample_rate":24000,"total_samples":2160000,
+  "segments":[{"source":"run:lesson04-audio-v1/clean/G01.wav","sha256":"REPLACE_WITH_SOURCE_SHA256","start_sample":0}]
+}
